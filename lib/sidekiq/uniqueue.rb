@@ -1,3 +1,4 @@
+require "sidekiq"
 require "sidekiq/uniqueue/version"
 require "sidekiq/uniqueue/client"
 require "sidekiq/uniqueue/fetch"
