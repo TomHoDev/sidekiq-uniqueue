@@ -29,7 +29,9 @@ module Sidekiq
           local uniqueue_list_name = queue_name..':uniqueue_list'
           local results = redis.call('rpop', queue_name)
           local unique_payload = redis.call('rpop', uniqueue_list_name)
-          redis.call('srem', uniqueue_set_name, unique_payload)
+          if unique_payload then
+            redis.call('srem', uniqueue_set_name, unique_payload)
+          end
           return results
         LUA
       end
