@@ -53,4 +53,3 @@ module Sidekiq
 end
 
 Sidekiq.options[:fetch] = Sidekiq::Uniqueue::Fetch
-Sidekiq::Uniqueue.confirm_validaty_of_all_queues
