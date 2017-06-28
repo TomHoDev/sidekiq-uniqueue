@@ -1,3 +1,4 @@
+require "sidekiq/client"
 module Sidekiq
   class Client
 

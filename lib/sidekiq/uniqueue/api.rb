@@ -1,3 +1,4 @@
+require "sidekiq/api"
 module Sidekiq
 
   class Queue
@@ -5,6 +6,7 @@ module Sidekiq
     def clear
       Sidekiq.redis do |conn|
         conn.evalsha del_queue_eval_sha(conn), [@rname]
+        conn.srem("queues".freeze, name)
       end
     end
 
@@ -17,8 +19,6 @@ module Sidekiq
         redis.call('del', queue_name)
         redis.call('del', uniqueue_set_name)
         redis.call('del', uniqueue_list_name)
-
-        redis.call('queues', queue_name)
 
       LUA
     end
