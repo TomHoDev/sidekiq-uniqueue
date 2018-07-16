@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Guaranteed & performant job uniqueness enforced at the queue level}
   spec.description   = %q{Guaranteed & performant job uniqueness enforced at the queue level}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/AcademicWorks/sidekiq-uniqueue/edit/master/sidekiq-uniqueue.gemspec"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
